@@ -60,7 +60,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $mysqli->close();
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -138,7 +137,7 @@ $mysqli->close();
 
 
         /* Form */
-        form {
+        .form-all {
             display: flex;
             gap: 20px; /* Khoảng cách giữa các trường */
             flex-grow: 1; /* Cho phép form chiếm không gian còn lại */
@@ -242,14 +241,12 @@ $mysqli->close();
 <body>
     <h3>Register</h3>
 
-
     <div class="container">
-    <div class="form-container">
         <div class="form-title">
             <h1>Student Attendance Software</h1>
         </div>
-        <div class="content">
-            <form class="form-all" action="" method="POST">
+        <form class="content" action="" method="POST">
+            <div class="form-all">
                 <div class="form1">
                     <div class="form-group">
                         <label for="username">Username:</label>
@@ -267,15 +264,15 @@ $mysqli->close();
                     <div class="form-group">
                         <label for="role">Role:</label>
                         <div>
-                            <input type="radio" id="admin" name="user" value="admin">
+                            <input type="radio" id="admin" name="role" value="admin" required>
                             <label for="admin">Admin</label>
                         </div>
                         <div>
-                            <input type="radio" id="teacher" name="user" value="teacher">
+                            <input type="radio" id="teacher" name="role" value="teacher" required>
                             <label for="teacher">Teacher</label>
                         </div>
                         <div>
-                            <input type="radio" id="student" name="user" value="student">
+                            <input type="radio" id="student" name="role" value="student" required>
                             <label for="student">Student</label>
                         </div>
                     </div>
@@ -299,13 +296,12 @@ $mysqli->close();
                         <input type="text" class="form-control" id="gender" name="gender" required>
                     </div>
                 </div>
-            </form>
-            <div class="btn-regixter">
+            </div>
+            <div class="btn-regixter" method="POST">
                 <button class="btn btn-success">Register</button>
                 <p>Already have an account? <a href="Login.php">Login</a>.</p>
             </div>
-        </div>
+        </form>
     </div>
-</div>
 </body>
 </html>

@@ -51,6 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $mysqli->close();
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -196,28 +197,27 @@ $mysqli->close();
 
 <body>
     <div class="title">
-    <p>Login form</p>
+        <p>Login form</p>
     </div>
 
     <div class="container">
         <div class="form-title">
-            <h1>Student Attendance  Software</h1>
+            <h1>Student Attendance Software</h1>
         </div>
 
-        <div class="form" action="" method="POST">
+        <form class="form" action="" method="POST">
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" class="form-control" id="username" name="username" required>
-                <span class="text-danger"><?php echo $error; ?></span>
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
                 <input type="password" class="form-control" id="password" name="password" required>
-                <span class="text-danger"><?php echo $error; ?></span>
             </div>
+            <span class="text-danger"><?php echo $error; ?></span>
             <button class="btn btn-success">Login</button>
             <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
-        </div>
+        </form>
     </div>
 </body>
 
